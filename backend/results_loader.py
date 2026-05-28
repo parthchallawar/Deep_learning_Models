@@ -1,8 +1,9 @@
 import json
 import os
 
-RESULTS_FILE = "results.json"
-MOCK_RESULTS_FILE = "../frontend/src/utils/mock_results.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+RESULTS_FILE = os.path.join(BASE_DIR, "results.json")
+MOCK_RESULTS_FILE = os.path.join(BASE_DIR, "..", "frontend", "src", "utils", "mock_results.json")
 _results_cache = []
 
 def load_results():
