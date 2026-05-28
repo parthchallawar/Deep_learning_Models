@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Add backend directory to sys.path to support robust absolute imports in serverless deployments
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form, Query
 from fastapi.middleware.cors import CORSMiddleware
 from sse_starlette.sse import EventSourceResponse
