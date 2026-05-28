@@ -3,7 +3,19 @@ import mockResults from './mock_results.json';
 
 // Get backend URL from local storage or default to localhost
 const getBackendUrl = () => {
-  return localStorage.getItem('caltech_backend_url') || 'http://localhost:8000';
+  const stored = localStorage.getItem('caltech_backend_url');
+  if (stored) return stored;
+  
+  if (typeof window !== 'undefined') {
+    const hostname = window.location.hostname;
+    // Local development fallback
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+      return 'http://localhost:8000';
+    }
+    // Vercel / Production deployment relative mapping
+    return window.location.origin;
+  }
+  return 'http://localhost:8000';
 };
 
 export const setBackendUrl = (url) => {

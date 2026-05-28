@@ -2,6 +2,20 @@ import React from 'react';
 import CountUp from 'react-countup';
 import { ArrowUpRight, ArrowDownRight } from 'lucide-react';
 
+export const ACCENTS = {
+  purple: '#7c3aed',
+  cyan: '#06b6d4',
+  pink: '#7c3aed', // redirected to purple
+  green: '#10b981',
+  slate: '#64748b'
+};
+
+export const ARCH_COLORS = {
+  DNN: '#6b7280',       // Neutral Gray
+  CNN: '#06b6d4',       // Neon Cyan
+  TL: '#7c3aed',        // Neon Purple
+};
+
 const MetricCard = ({
   title,
   value,
@@ -25,10 +39,10 @@ const MetricCard = ({
       bg: 'bg-accent-cyan/10',
     },
     pink: {
-      text: 'text-accent-pink',
-      border: 'border-accent-pink/20',
-      ring: 'stroke-accent-pink',
-      bg: 'bg-accent-pink/10',
+      text: 'text-accent-purple',
+      border: 'border-accent-purple/20',
+      ring: 'stroke-accent-purple',
+      bg: 'bg-accent-purple/10',
     },
     green: {
       text: 'text-accent-green',
@@ -115,7 +129,7 @@ const MetricCard = ({
         <div className={`flex items-center rounded-md px-1.5 py-0.5 text-[10px] font-bold ${
           isBetter 
             ? 'bg-accent-green/10 text-accent-green border border-accent-green/20' 
-            : 'bg-accent-pink/10 text-accent-pink border border-accent-pink/20'
+            : 'bg-accent-purple/10 text-accent-purple border border-accent-purple/20'
         }`}>
           {isBetter ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
           <span>{absDiffPercent}%</span>
