@@ -1,0 +1,10 @@
+
+fastapi
+uvicorn
+pydantic
+sse-starlette
+tensorflow
+scikit-learn
+pillow
+numpy
+pyngrok
