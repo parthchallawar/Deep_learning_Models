@@ -1,0 +1,15 @@
+[project]
+name = "assignement_6"
+version = "0.1.0"
+description = "FastAPI + Vite React demo"
+# You can keep this empty – Vercel will install the packages listed in requirements.txt
+dependencies = []
+
+# -----------------------------------------------------------------
+# Vercel‑specific configuration
+# -----------------------------------------------------------------
+[tool.vercel]
+# Tell Vercel that the ASGI app lives in backend/main.py and the
+# FastAPI instance is the variable `app`.
+# The key is the *source file*, the value is the *entrypoint variable*.
+functions = [{ src = "backend/main.py", entrypoint = "app" }]
