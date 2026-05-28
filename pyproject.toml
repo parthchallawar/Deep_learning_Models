@@ -12,11 +12,4 @@ dependencies = [
     "numpy"
 ]
 
-# -----------------------------------------------------------------
-# Vercel‑specific configuration
-# -----------------------------------------------------------------
-[tool.vercel]
-# Tell Vercel that the ASGI app lives in backend/main.py and the
-# FastAPI instance is the variable `app`.
-entrypoint = "backend.main:app"
 
